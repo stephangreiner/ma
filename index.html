@@ -24,10 +24,6 @@
 <tr>
 <td>
 <button id="b_de" onclick="de_an_aus()">de</button>
-<button id="b_eng2" onclick="eng2_an_aus()" title="Long1862">Long1862</button>
-<button id="b_fra" onclick="fra_an_aus()" title="Hilaire 1876">Hil1876</button>
-<button id="b_eng3" onclick="eng3_an_aus()" title="Casaubon1634">Cas1634</button>
-<button id="b_ori" onclick="ori_an_aus()" title="Teubner1908">Teub1908</button>
 </td>
 </tr>
 </table>
@@ -40,41 +36,34 @@
 <section id="kapitelbox1">
 <button aria-hidden="true" onclick="b1ausblenden()" type="button">Buch 1 <span id="b1a"> ⇦ </span></button>
 <div class="blocksatz" id="Buch1">
+
 <article class="uw">
 <p class="de" id="d1.1"><b aria-hidden="true">1.1. </b>Von meinem Großvater Verus: Anstand und ein mildes Wesen.</p>
-
-
-
-
 </article>
+<p class="xx" id="x1.1"><b aria-hidden="true">1.1. </b></p>
+</article>
+
 <article class="uw">
 <p class="de" id="d1.2"><b aria-hidden="true">1.2. </b>Von meinem leiblichen Vater , nach seinem Ruf und meiner Erinnerung: Aufrichtigkeit und Männlichkeit.</p>
-
-
-
-
+<p class="xx" id="x1.2"><b aria-hidden="true">1.2. </b></p>
 </article>
+
 <article class="uw">
-<p class="de" id="d1.3"><b aria-hidden="true">1.3. </b>Von meiner Mutter : Frömmigkeit, Großzügigkeit, nicht nur das Unterlassen von bösen Taten, sondern selbst von Gedanken hieran. Auch die Schlichtheit der Lebensführung, so anders als unter Reichen üblich.</p>
-
-
-
-
+<p class="de" id="d1.3"><b aria-hidden="true">1.3. </b>Von meiner Mutter: Frömmigkeit, Großzügigkeit, nicht nur das Unterlassen von bösen Taten, sondern selbst von Gedanken hieran. Auch die Schlichtheit der Lebensführung, so anders als unter Reichen üblich.</p>
+<p class="xx" id="x1.3"><b aria-hidden="true">1.3. </b></p>
 </article>
+
 <article class="uw">
 <p class="de" id="d1.4"><b aria-hidden="true">1.4. </b>Von meinem Urgroßvater : Keine öffentlichen Schulen besucht zu haben, sondern zu Hause gute Lehrer gehabt zu haben, sowie die Einsicht, dass man hierfür großzügig Geld ausgeben sollte.</p>
-
-
-
-
+<p class="xx" id="x1.4"><b aria-hidden="true">1.4. </b></p>
 </article>
+
 <article class="uw">
 <p class="de" id="d1.5"><b aria-hidden="true">1.5. </b>Von meinem Lehrer : Beim Wagenrennen kein Anhänger der Grünen oder der Blauen und beim Gladiatorenkampf kein Anhänger des Parmularius oder Scutarius zu sein. Schmerzen zu ertragen und wenig Bedürfnisse zu haben. Mit den eigenen Händen zu arbeiten, sich nicht in Angelegenheiten anderer einmischen, nicht auf böswilliges Gerede zu hören.</p>
-
-
-
-
+<p class="xx" id="x1.5"><b aria-hidden="true">1.5. </b></p>
 </article>
+
+
 <article class="uw">
 <p class="de" id="d1.6"><b aria-hidden="true">1.6. </b>Von Diognetus : Keine Zeit mit unwichtigen Dingen zu verschwenden. Nichts zu glauben, was von Wundermännern und Quacksalbern über Beschwörungen, Dämonenaustreibungen und dergleichen geredet wird. Keine Wachtelkämpfe zu veranstalten und sich nicht durch solche Sportarten erregen lassen. Klartext dulden. Eine Vorliebe für die Philosophie und dabei die Vorlesungen zuerst von Baccheius, dann von Tandasis und Marcianus zu besuchen. Von klein auf Aufsätze schreiben. Das Feldbett, die Felldecke sowie alles weitere, was zur Ausbildung nach dem griechischen Stil gehört, lieben.</p>
 
@@ -1591,16 +1580,7 @@ Bedenke bei all diesen Männern, dass sie schon lange tot und begraben sind. Gib
 </div>
 </section>
 </main>
- <div id="ziel"></div>
 
-
-<script>
-  fetch('index-multi.html')
-    .then(response => response.text())
-    .then(html => {
-      document.getElementById('ziel').innerHTML = html;
-    });
-</script>
 
 <script src="script.js" type="text/JavaScript"></script>
 </body>
