@@ -12,11 +12,10 @@ fetch('greek.json')
   .then(data => {
     // Access the JSON object here
     console.log(data);              // Logs the entire object 
-    const g1_1 = data.g1_1;
+   g1_1 = greek.g1_1;
     // Logs: Hello, Stefan!
 
-    // Optional: use it in the DOM
-    document.getElementById('output').textContent = data.greeting;
+
   })
   .catch(error => {
     console.error('Could not load JSON:', error);
