@@ -9,9 +9,9 @@ fetch('greek.json')
     }
     return response.json(); // Converts JSON text into JavaScript object
   })
-  .then(data => {
+  .then(greek => {
     // Access the JSON object here
-    console.log(data);              // Logs the entire object 
+    console.log(greek);              // Logs the entire object 
    g1_1 = greek.g1_1;
     // Logs: Hello, Stefan!
 
