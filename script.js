@@ -1,28 +1,35 @@
+const g1_1 = "";
 
 
-function xx_an_aus() {
-  const elements = document.querySelectorAll(".xx");
-  elements.forEach(element => {
-    const currentDisplay = getComputedStyle(element).display;
-    if (currentDisplay === "none") {
-      element.style.display = "block";
-      element.innerHTML = "testtesttest";
-    } else {
-      element.style.display = "none";
+
+fetch('greek.json')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
+    return response.json(); // Converts JSON text into JavaScript object
+  })
+  .then(data => {
+    // Access the JSON object here
+    console.log(data);              // Logs the entire object 
+    const g1_1 = data.g1_1;
+    // Logs: Hello, Stefan!
+
+    // Optional: use it in the DOM
+    document.getElementById('output').textContent = data.greeting;
+  })
+  .catch(error => {
+    console.error('Could not load JSON:', error);
   });
-}
 
 
-
-function id1() {
-  const e = document.getElementById("x1.1");
-  const greekText = "Παρὰ τοῦ πάππου Οὐήρου τὸ καλόηθες καὶ ἀόργητον.";
+function tg1_1() {
+  const e = document.getElementById("g1.1");
   e.style.color = "red";
   if (e.innerHTML.trim() !== "") {
     e.innerHTML = "";
   } else {
-    e.innerHTML = greekText;
+    e.innerHTML = g1_1;
   }
 }
 
@@ -36,10 +43,6 @@ function id3() {
   e.innerHTML = "Ἐπεὶ δὲ ἔλαβεν τὸν πατέρα αὐτοῦ, ἐξῆλθεν εἰς τὴν ἑαυτοῦ γῆν, καὶ οὐκ ἐπείρασεν αὐτὸν οὐδὲ ἐκώλυσε αὐτὸν τοῦτο ποιεῖν.";
   e.style.color = "green";
 }
-
-
-
-
 
 
 function de_an_aus() {
