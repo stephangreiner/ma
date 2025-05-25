@@ -23,7 +23,7 @@ fetch('greek.json')
 
 
 function tg1_1() {
-  const e = document.getElementById("g1.1");
+  const e = document.getElementById("g1_1");
   e.style.color = "red";
   if (e.innerHTML.trim() !== "") {
     e.innerHTML = "";
