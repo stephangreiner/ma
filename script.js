@@ -14,7 +14,9 @@ fetch('greek.json')
     // Access the JSON object here
     console.log(greek);              // Logs the entire object 
    g1_1 = greek.g1_1;
-    // Logs: Hello, Stefan!
+g1_2 = greek.g1_2;
+g1_3 = greek.g1_3;
+
 
 
   })
