@@ -1,5 +1,6 @@
 let g1_1 = "";
-
+let g1_2 = "";
+let g1_3 = "";
 
 
 fetch('greek.json')
@@ -23,8 +24,8 @@ fetch('greek.json')
 
 
 function tg1_1() {
-  const e = document.getElementById("g1_1");
-  e.style.color = "red";
+  const e = document.getElementById("x1_1");
+
   if (e.innerHTML.trim() !== "") {
     e.innerHTML = "";
   } else {
@@ -32,16 +33,28 @@ function tg1_1() {
   }
 }
 
-function id2() {
-  const e = document.getElementById("x1.2");
-  e.innerHTML = "Ἀλλὰ καὶ τὸν ἄλλον ἔχοντα τὸν αὐτὸν πατέρα, ὃς ἦν ἐν τῷ οἴκῳ, οὐκ ἐπείρασεν αὐτὸν οὐδὲ ἐκώλυσε αὐτὸν τοῦτο ποιεῖν.";
-  e.style.color = "blue";
+
+function tg1_2() {
+  const e = document.getElementById("x1_2");
+
+  if (e.innerHTML.trim() !== "") {
+    e.innerHTML = "";
+  } else {
+    e.innerHTML = g1_2;
+  }
 }
-function id3() {
-  const e = document.getElementById("x1.3");
-  e.innerHTML = "Ἐπεὶ δὲ ἔλαβεν τὸν πατέρα αὐτοῦ, ἐξῆλθεν εἰς τὴν ἑαυτοῦ γῆν, καὶ οὐκ ἐπείρασεν αὐτὸν οὐδὲ ἐκώλυσε αὐτὸν τοῦτο ποιεῖν.";
-  e.style.color = "green";
+
+function tg1_3() {
+  const e = document.getElementById("x1_3");
+
+  if (e.innerHTML.trim() !== "") {
+    e.innerHTML = "";
+  } else {
+    e.innerHTML = g1_3;
+  }
 }
+
+
 
 
 function de_an_aus() {
