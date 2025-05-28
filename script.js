@@ -2,28 +2,23 @@ let g1_1 = "";
 let g1_2 = "";
 let g1_3 = "";
 
-
-fetch('greek.json')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    return response.json(); // Converts JSON text into JavaScript object
-  })
-  .then(greek => {
-    // Access the JSON object here
-    console.log(greek);              // Logs the entire object 
-   g1_1 = greek.g1_1;
-g1_2 = greek.g1_2;
-g1_3 = greek.g1_3;
-
-
-
-  })
-  .catch(error => {
-    console.error('Could not load JSON:', error);
-  });
-
+window.onload = () => {
+  fetch('greek.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(greek => {
+      g1_1 = greek.g1_1;
+      g1_2 = greek.g1_2;
+      g1_3 = greek.g1_3;
+    })
+    .catch(error => {
+      console.error('Could not load JSON:', error);
+    });
+};
 
 function tg1_1() {
   const e = document.getElementById("x1_1");
