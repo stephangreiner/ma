@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
       g1_1 = greek.g1_1;
       g1_2 = greek.g1_2;
       g1_3 = greek.g1_3;
+      g1_4 = greek.g1_4;
+      g1_5 = greek.g1_5;
+      g1_6 = greek.g1_6;
       greekLoaded = true;
       document.getElementById("b1_1").disabled = false;
     })
@@ -55,45 +58,20 @@ e.innerHTML = e.innerHTML.trim() !== "" ? "" : g1_5;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function de_an_aus() {
   const elements = document.querySelectorAll(".de");
   elements.forEach(element => {
-   
+    element.style.display = (element.style.display === "none") ? "block" : "none";
   });
 }
+
+function lang_an_aus() {
+  const elements = document.querySelectorAll(".bu_lang"); // Note the dot for class
+  elements.forEach(element => {
+    element.style.display = (element.style.display === "none") ? "block" : "none";
+  });
+}
+
 
 function b1ausblenden(){
   const e = document.getElementById ("Buch1")
