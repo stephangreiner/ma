@@ -1,7 +1,3 @@
-for (let i = 1; i <= 17; i++) {
-  window[`g1_${i}`] = "";
-}
-
 let greekLoaded = false;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,44 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
       return response.json();
     })
     .then(greek => {
-      g1_1 = greek.g1_1;
-      g1_2 = greek.g1_2;
-      g1_3 = greek.g1_3;
-      g1_4 = greek.g1_4;
-      g1_5 = greek.g1_5;
-      g1_6 = greek.g1_6;
-      g1_7 = greek.g1_7;
-      g1_8 = greek.g1_8;
-      g1_9 = greek.g1_9;
-      g1_10 = greek.g1_10;
-      g1_11 = greek.g1_11;
-      g1_12 = greek.g1_12;
-      g1_13 = greek.g1_13;
-      g1_14 = greek.g1_14;
-      g1_15 = greek.g1_15;
-      g1_16 = greek.g1_16;
-      g1_17 = greek.g1_17;
-
-      g2_1 = greek.g2_1;
-      g2_2 = greek.g2_2;
-      g2_3 = greek.g2_3;
-      g2_4 = greek.g2_4;
-      g2_5 = greek.g2_5;
-      g2_6 = greek.g2_6;
-      g2_7 = greek.g2_7;
-      g2_8 = greek.g2_8;
-      g2_9 = greek.g2_9;
-      g2_10 = greek.g2_10;
-      g2_11 = greek.g2_11;
-      g2_12 = greek.g2_12;
-      g2_13 = greek.g2_13;
-      g2_14 = greek.g2_14;
-      g2_15 = greek.g2_15;
-      g2_16 = greek.g2_16;
-
-
-
-
+      for (let i = 1; i <= 17; i++) {
+        window[`g1_${i}`] = greek[`g1_${i}`] || "";
+      }
+      for (let i = 1; i <= 16; i++) {
+        window[`g2_${i}`] = greek[`g2_${i}`] || "";
+      }
 
       greekLoaded = true;
       document.getElementById("b1_1").disabled = false;
@@ -144,7 +108,62 @@ function tg2_2() {
  const e = document.getElementById("x2_2");
   e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_2;
 }
-
+function tg2_3() {
+const e = document.getElementById("x2_3");
+  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_3;
+}
+function tg2_4() {
+const e = document.getElementById("x2_4");
+  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_4;
+}
+function tg2_5() {
+const e = document.getElementById("x2_5");
+  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_5;
+}
+function tg2_6() {
+const e = document.getElementById("x2_6");
+  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_6;
+}
+function tg2_7() {
+const e = document.getElementById("x2_7");
+  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_7;
+}
+function tg2_8() {
+const e = document.getElementById("x2_8");
+  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_8;
+}
+function tg2_9() {
+const e = document.getElementById("x2_9");
+  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_9;
+}
+function tg2_10() {
+const e = document.getElementById("x2_10");
+  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_10;
+}
+function tg2_11() {
+const e = document.getElementById("x2_11");
+  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_11;
+}
+function tg2_12() {
+const e = document.getElementById("x2_12");
+  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_12;
+}
+function tg2_13() {
+const e = document.getElementById("x2_13");
+  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_13;
+}
+function tg2_14() {
+const e = document.getElementById("x2_14");
+  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_14;
+}
+function tg2_15() {
+const e = document.getElementById("x2_15");
+  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_15;
+}
+function tg2_16() {
+const e = document.getElementById("x2_16");
+  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_16;
+}
 
 
 
