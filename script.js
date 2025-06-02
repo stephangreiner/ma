@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       greekLoaded = true;
-      document.getElementById("b1_1").disabled = false;
     })
     .catch(error => {
       console.error('Could not load JSON:', error);
