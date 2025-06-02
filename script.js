@@ -20,149 +20,24 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch(error => {
       console.error('Could not load JSON:', error);
     });
+
+  // Event Listener hinzufügen – nachdem das DOM vollständig geladen wurde
+  for (let i = 1; i <= 17; i++) {
+    document.getElementById(`b1_${i}`)?.addEventListener("click", () =>
+      toggleText(`x1_${i}`, window[`g1_${i}`])
+    );
+  }
+
+  for (let i = 1; i <= 16; i++) {
+    document.getElementById(`b2_${i}`)?.addEventListener("click", () =>
+      toggleText(`x2_${i}`, window[`g2_${i}`])
+    );
+  }
 });
 
-function tg1_1() {
-  if (!greekLoaded) {
-    console.warn("Greek text not loaded yet.");
-    return;
-  }
-const e = document.getElementById("x1_1");
-  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g1_1;
-}
-
-function tg1_2() {
- const e = document.getElementById("x1_2");
-  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g1_2;
-}
-
-function tg1_3() {
-const e = document.getElementById("x1_3");
-e.innerHTML = e.innerHTML.trim() !== "" ? "" : g1_3;
-}
-
-function tg1_4() {
- const e = document.getElementById("x1_4");
-  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g1_4;
-}
-
-function tg1_5() {
-const e = document.getElementById("x1_5");
-e.innerHTML = e.innerHTML.trim() !== "" ? "" : g1_5;
-}
-function tg1_6() {
-const e = document.getElementById("x1_6");
-e.innerHTML = e.innerHTML.trim() !== "" ? "" : g1_6;
-}
-function tg1_7() {
-const e = document.getElementById("x1_7");
-e.innerHTML = e.innerHTML.trim() !== "" ? "" : g1_7;
-}
-function tg1_8() {
-const e = document.getElementById("x1_8");
-e.innerHTML = e.innerHTML.trim() !== "" ? "" : g1_8;
-}
-function tg1_9() {
-const e = document.getElementById("x1_9");
-e.innerHTML = e.innerHTML.trim() !== "" ? "" : g1_9;
-}
-function tg1_10() {
-const e = document.getElementById("x1_10");
-e.innerHTML = e.innerHTML.trim() !== "" ? "" : g1_10;
-}
-function tg1_11() {
-const e = document.getElementById("x1_11");
-e.innerHTML = e.innerHTML.trim() !== "" ? "" : g1_11;
-}
-function tg1_12() {
-const e = document.getElementById("x1_12");
-e.innerHTML = e.innerHTML.trim() !== "" ? "" : g1_12;
-}
-function tg1_13() {
-const e = document.getElementById("x1_13");
-e.innerHTML = e.innerHTML.trim() !== "" ? "" : g1_13;
-}
-function tg1_14() {
-const e = document.getElementById("x1_14");
-e.innerHTML = e.innerHTML.trim() !== "" ? "" : g1_14;
-}
-function tg1_15() {
-const e = document.getElementById("x1_15");
-e.innerHTML = e.innerHTML.trim() !== "" ? "" : g1_15;
-}
-function tg1_16() {
-const e = document.getElementById("x1_16");
-e.innerHTML = e.innerHTML.trim() !== "" ? "" : g1_16;
-}
-function tg1_17() {
-const e = document.getElementById("x1_17");
-e.innerHTML = e.innerHTML.trim() !== "" ? "" : g1_17;
-}
-
-
-function tg2_1() {
-const e = document.getElementById("x2_1");
-  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_1;
-}
-function tg2_2() {
- const e = document.getElementById("x2_2");
-  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_2;
-}
-function tg2_3() {
-const e = document.getElementById("x2_3");
-  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_3;
-}
-function tg2_4() {
-const e = document.getElementById("x2_4");
-  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_4;
-}
-function tg2_5() {
-const e = document.getElementById("x2_5");
-  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_5;
-}
-function tg2_6() {
-const e = document.getElementById("x2_6");
-  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_6;
-}
-function tg2_7() {
-const e = document.getElementById("x2_7");
-  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_7;
-}
-function tg2_8() {
-const e = document.getElementById("x2_8");
-  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_8;
-}
-function tg2_9() {
-const e = document.getElementById("x2_9");
-  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_9;
-}
-function tg2_10() {
-const e = document.getElementById("x2_10");
-  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_10;
-}
-function tg2_11() {
-const e = document.getElementById("x2_11");
-  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_11;
-}
-function tg2_12() {
-const e = document.getElementById("x2_12");
-  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_12;
-}
-function tg2_13() {
-const e = document.getElementById("x2_13");
-  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_13;
-}
-function tg2_14() {
-const e = document.getElementById("x2_14");
-  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_14;
-}
-function tg2_15() {
-const e = document.getElementById("x2_15");
-  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_15;
-}
-function tg2_16() {
-const e = document.getElementById("x2_16");
-  e.innerHTML = e.innerHTML.trim() !== "" ? "" : g2_16;
+function toggleText(id, content) {
+  const e = document.getElementById(id);
+  e.innerHTML = e.innerHTML.trim() !== "" ? "" : content;
 }
 
 
@@ -214,3 +89,15 @@ function b3ausblenden(){
   };
   
 
+// Scroll-Position speichern, wenn die Seite verlassen wird
+window.addEventListener("beforeunload", () => {
+  localStorage.setItem("scrollPosition", window.scrollY);
+});
+
+// Beim Laden der Seite zur gespeicherten Position scrollen
+document.addEventListener("DOMContentLoaded", () => {
+  const savedScroll = localStorage.getItem("scrollPosition");
+  if (savedScroll !== null) {
+    window.scrollTo(0, parseInt(savedScroll, 10));
+  }
+});
