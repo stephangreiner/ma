@@ -24,14 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Event-Listener für g1
   for (let i = 1; i <= 17; i++) {
-    document.getElementById(`b1_${i}`)?.addEventListener("click", () =>
+    document.getElementById(`bg1_${i}`)?.addEventListener("click", () =>
       toggleText(`x1_${i}`, window[`g1_${i}`])
     );
   }
 
   // Event-Listener für g2
   for (let i = 1; i <= 16; i++) {
-    document.getElementById(`b2_${i}`)?.addEventListener("click", () =>
+    document.getElementById(`bg2_${i}`)?.addEventListener("click", () =>
       toggleText(`x2_${i}`, window[`g2_${i}`])
     );
   }
