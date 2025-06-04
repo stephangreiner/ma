@@ -94,10 +94,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById(`bl1_${i}`)?.addEventListener("click", () =>
       toggleText(`x1_${i}`, window[`l1_${i}`])
     );
-    document.getElementById(`hg1_${i}`)?.addEventListener("click", () =>
+    document.getElementById(`bh1_${i}`)?.addEventListener("click", () =>
       toggleText(`x1_${i}`, window[`h1_${i}`])
     );
-    document.getElementById(`cl1_${i}`)?.addEventListener("click", () =>
+    document.getElementById(`bc1_${i}`)?.addEventListener("click", () =>
       toggleText(`x1_${i}`, window[`c1_${i}`])
     );
   }
@@ -110,10 +110,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById(`bl2_${i}`)?.addEventListener("click", () =>
       toggleText(`x2_${i}`, window[`l2_${i}`])
     );
-    document.getElementById(`hg2_${i}`)?.addEventListener("click", () =>
+    document.getElementById(`bh2_${i}`)?.addEventListener("click", () =>
       toggleText(`x2_${i}`, window[`h2_${i}`])
     );
-    document.getElementById(`cl2_${i}`)?.addEventListener("click", () =>
+    document.getElementById(`bcl2_${i}`)?.addEventListener("click", () =>
       toggleText(`x2_${i}`, window[`c2_${i}`])
     );
 
