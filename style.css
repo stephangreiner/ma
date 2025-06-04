@@ -1,10 +1,10 @@
-:root {
-  --eng2farbe: rgb(187, 255, 168);
-  --eng3farbe: rgb(0, 255, 238);
-  --frafarbe: rgb(83, 180, 174);
-  --defarbe: rgba(255, 255, 255, 0.48);
-  --orifarbe: rgba(139, 207, 219, 0.48);
-}
+.text-greek { color: darkblue; }
+.text-long { color: green; }
+.text-hilaire { color: darkred; }
+.text-casaubon { color: purple; }
+
+
+
 
 body {
   font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
@@ -25,29 +25,10 @@ p {
   padding: 0 0.5em;
 }
 
-.eng2 {
-  background-color: var(--eng2farbe);
+.bu_lang {
   display: none;
 }
 
-.eng3 {
-  background-color: var(--eng3farbe);
-  display: none;
-}
-
-.fra {
-  background-color: var(--frafarbe);
-  display: none;
-}
-
-.feld {
-  display: none;
-}
-
-.ori {
-  background-color: var(--orifarbe);
-  display: none;
-}
 
 #VZ {
   color: white;

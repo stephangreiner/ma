@@ -1,5 +1,8 @@
 let greekLoaded = false;
 let longLoaded = false;
+let hilaireLoaded = false;
+let casaubonLoaded = false;
+
 
 document.addEventListener('DOMContentLoaded', () => {
   // Greek JSON laden
@@ -40,6 +43,49 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Could not load long.json:', error);
     });
 
+  // hilaire JSON laden
+  fetch('hilaire.json')
+    .then(response => {
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      return response.json();
+    })
+    .then(hilaire => {
+      for (let i = 1; i <= 17; i++) {
+        window[`h1_${i}`] = hilaire[`h1_${i}`] || "";
+      }
+      for (let i = 1; i <= 16; i++) {
+        window[`h2_${i}`] = hilaire[`h2_${i}`] || "";
+      }
+      hilaireLoaded = true;
+    })
+    .catch(error => {
+      console.error('Could not load hilaire.json:', error);
+    });
+
+
+  // casaubon JSON laden    
+  fetch('casaubon.json')
+    .then(response => {
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      return response.json();
+    })
+    .then(casaubon => {
+      for (let i = 1; i <= 17; i++) {
+        window[`c1_${i}`] = casaubon[`c1_${i}`] || "";
+      }
+      for (let i = 1; i <= 16; i++) {
+        window[`c2_${i}`] = casaubon[`c2_${i}`] || "";
+      }
+      casaubonLoaded = true;
+    })
+    .catch(error => {
+      console.error('Could not load causaubon.json:', error);
+    });
+
+
+
+
+
   // Event-Listener für g1
   for (let i = 1; i <= 17; i++) {
     document.getElementById(`bg1_${i}`)?.addEventListener("click", () =>
@@ -47,6 +93,12 @@ document.addEventListener('DOMContentLoaded', () => {
     );
     document.getElementById(`bl1_${i}`)?.addEventListener("click", () =>
       toggleText(`x1_${i}`, window[`l1_${i}`])
+    );
+    document.getElementById(`hg1_${i}`)?.addEventListener("click", () =>
+      toggleText(`x1_${i}`, window[`h1_${i}`])
+    );
+    document.getElementById(`cl1_${i}`)?.addEventListener("click", () =>
+      toggleText(`x1_${i}`, window[`c1_${i}`])
     );
   }
 
@@ -58,6 +110,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById(`bl2_${i}`)?.addEventListener("click", () =>
       toggleText(`x2_${i}`, window[`l2_${i}`])
     );
+    document.getElementById(`hg2_${i}`)?.addEventListener("click", () =>
+      toggleText(`x2_${i}`, window[`h2_${i}`])
+    );
+    document.getElementById(`cl2_${i}`)?.addEventListener("click", () =>
+      toggleText(`x2_${i}`, window[`c2_${i}`])
+    );
+
+
   }
 });
 
