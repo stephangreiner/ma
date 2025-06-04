@@ -1,25 +1,43 @@
 let greekLoaded = false;
+let longLoaded = false;
 
 document.addEventListener('DOMContentLoaded', () => {
-  // JSON laden
+  // Greek JSON laden
   fetch('greek.json')
     .then(response => {
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       return response.json();
     })
     .then(greek => {
-      // Inhalte in globale Variablen schreiben
       for (let i = 1; i <= 17; i++) {
         window[`g1_${i}`] = greek[`g1_${i}`] || "";
       }
       for (let i = 1; i <= 16; i++) {
         window[`g2_${i}`] = greek[`g2_${i}`] || "";
       }
-
       greekLoaded = true;
     })
     .catch(error => {
-      console.error('Could not load JSON:', error);
+      console.error('Could not load greek.json:', error);
+    });
+
+  // Long JSON laden
+  fetch('long.json')
+    .then(response => {
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      return response.json();
+    })
+    .then(long => {
+      for (let i = 1; i <= 17; i++) {
+        window[`l1_${i}`] = long[`l1_${i}`] || "";
+      }
+      for (let i = 1; i <= 16; i++) {
+        window[`l2_${i}`] = long[`l2_${i}`] || "";
+      }
+      longLoaded = true;
+    })
+    .catch(error => {
+      console.error('Could not load long.json:', error);
     });
 
   // Event-Listener für g1
@@ -27,12 +45,18 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById(`bg1_${i}`)?.addEventListener("click", () =>
       toggleText(`x1_${i}`, window[`g1_${i}`])
     );
+    document.getElementById(`bl1_${i}`)?.addEventListener("click", () =>
+      toggleText(`x1_${i}`, window[`l1_${i}`])
+    );
   }
 
   // Event-Listener für g2
   for (let i = 1; i <= 16; i++) {
     document.getElementById(`bg2_${i}`)?.addEventListener("click", () =>
       toggleText(`x2_${i}`, window[`g2_${i}`])
+    );
+    document.getElementById(`bl2_${i}`)?.addEventListener("click", () =>
+      toggleText(`x2_${i}`, window[`l2_${i}`])
     );
   }
 });
@@ -66,3 +90,16 @@ function buchAnAus(id) {
   const e = document.getElementById(id);
   e.style.display = (e.style.display === "none") ? "block" : "none";
 }
+
+// Scrollposition beim Verlassen der Seite speichern
+window.addEventListener("beforeunload", () => {
+  localStorage.setItem("scrollPosition", window.scrollY);
+});
+
+// Beim Laden der Seite zur gespeicherten Position scrollen
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollPos = localStorage.getItem("scrollPosition");
+  if (scrollPos !== null) {
+    window.scrollTo(0, parseInt(scrollPos, 10));
+  }
+});
