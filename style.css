@@ -27,6 +27,8 @@ p {
 
 .bu_lang {
   display: none;
+   display: inline-block; /* Makes buttons flow like text but allows setting width/height */
+    margin-right: 5px;   
 }
 
 
@@ -103,4 +105,17 @@ a:visited {
 
 [lang="grc"] {
   font-family: 'Palatino Linotype', 'Gentium Plus', serif;
+}
+
+.bu_lang{
+  background-color: #686f74; /* Blue by default */
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.bu_lang.active {
+  background-color: #0000007a; /* Red when active */
 }

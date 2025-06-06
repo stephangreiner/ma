@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  // Event-Listener für g1
+  // Event-Listener für Buch1
   for (let i = 1; i <= 17; i++) {
     document.getElementById(`bg1_${i}`)?.addEventListener("click", () =>
       toggleText(`x1_${i}`, window[`g1_${i}`])
@@ -94,15 +94,33 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById(`bl1_${i}`)?.addEventListener("click", () =>
       toggleText(`x1_${i}`, window[`l1_${i}`])
     );
-    document.getElementById(`bh1_${i}`)?.addEventListener("click", () =>
+    document.getElementById(`hg1_${i}`)?.addEventListener("click", () =>
       toggleText(`x1_${i}`, window[`h1_${i}`])
     );
-    document.getElementById(`bc1_${i}`)?.addEventListener("click", () =>
+    document.getElementById(`cl1_${i}`)?.addEventListener("click", () =>
       toggleText(`x1_${i}`, window[`c1_${i}`])
     );
   }
 
-  // Event-Listener für g2
+  // Event-Listener für Buch 2
+  for (let i = 1; i <= 17; i++) {
+    document.getElementById(`bg2_${i}`)?.addEventListener("click", () =>
+      toggleText(`x2_${i}`, window[`g2_${i}`])
+    );
+    document.getElementById(`bl2_${i}`)?.addEventListener("click", () =>
+      toggleText(`x2_${i}`, window[`l2_${i}`])
+    );
+    document.getElementById(`hg2_${i}`)?.addEventListener("click", () =>
+      toggleText(`x2_${i}`, window[`h2_${i}`])
+    );
+    document.getElementById(`cl2_${i}`)?.addEventListener("click", () =>
+      toggleText(`x2_${i}`, window[`c2_${i}`])
+    );
+  }
+
+
+
+    // Event-Listener für Buch 3
   for (let i = 1; i <= 16; i++) {
     document.getElementById(`bg2_${i}`)?.addEventListener("click", () =>
       toggleText(`x2_${i}`, window[`g2_${i}`])
@@ -110,15 +128,21 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById(`bl2_${i}`)?.addEventListener("click", () =>
       toggleText(`x2_${i}`, window[`l2_${i}`])
     );
-    document.getElementById(`bh2_${i}`)?.addEventListener("click", () =>
+    document.getElementById(`hg2_${i}`)?.addEventListener("click", () =>
       toggleText(`x2_${i}`, window[`h2_${i}`])
     );
-    document.getElementById(`bcl2_${i}`)?.addEventListener("click", () =>
+    document.getElementById(`cl2_${i}`)?.addEventListener("click", () =>
       toggleText(`x2_${i}`, window[`c2_${i}`])
     );
-
-
   }
+
+
+
+
+
+
+
+
 });
 
 // Text ein-/ausblenden
@@ -162,4 +186,13 @@ document.addEventListener("DOMContentLoaded", () => {
   if (scrollPos !== null) {
     window.scrollTo(0, parseInt(scrollPos, 10));
   }
+});
+
+
+const buttons = document.querySelectorAll('.bu_lang');
+
+buttons.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    btn.classList.toggle('active');
+  });
 });
