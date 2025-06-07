@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
       casaubonLoaded = true;
     })
     .catch(error => {
-      console.error('Could not load causaubon.json:', error);
+      console.error('Could not load casaubon.json:', error);
     });
 
 
@@ -94,10 +94,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById(`bl1_${i}`)?.addEventListener("click", () =>
       toggleText(`x1_${i}`, window[`l1_${i}`])
     );
-    document.getElementById(`hg1_${i}`)?.addEventListener("click", () =>
+    document.getElementById(`bh1_${i}`)?.addEventListener("click", () =>
       toggleText(`x1_${i}`, window[`h1_${i}`])
     );
-    document.getElementById(`cl1_${i}`)?.addEventListener("click", () =>
+    document.getElementById(`bcl1_${i}`)?.addEventListener("click", () =>
       toggleText(`x1_${i}`, window[`c1_${i}`])
     );
   }
@@ -110,10 +110,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById(`bl2_${i}`)?.addEventListener("click", () =>
       toggleText(`x2_${i}`, window[`l2_${i}`])
     );
-    document.getElementById(`hg2_${i}`)?.addEventListener("click", () =>
+    document.getElementById(`bh2_${i}`)?.addEventListener("click", () =>
       toggleText(`x2_${i}`, window[`h2_${i}`])
     );
-    document.getElementById(`cl2_${i}`)?.addEventListener("click", () =>
+    document.getElementById(`cc2_${i}`)?.addEventListener("click", () =>
       toggleText(`x2_${i}`, window[`c2_${i}`])
     );
   }
@@ -122,17 +122,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Event-Listener für Buch 3
   for (let i = 1; i <= 16; i++) {
-    document.getElementById(`bg2_${i}`)?.addEventListener("click", () =>
-      toggleText(`x2_${i}`, window[`g2_${i}`])
+    document.getElementById(`bg3_${i}`)?.addEventListener("click", () =>
+      toggleText(`x3_${i}`, window[`g3_${i}`])
     );
-    document.getElementById(`bl2_${i}`)?.addEventListener("click", () =>
-      toggleText(`x2_${i}`, window[`l2_${i}`])
+    document.getElementById(`bl3_${i}`)?.addEventListener("click", () =>
+      toggleText(`x3_${i}`, window[`l3_${i}`])
     );
-    document.getElementById(`hg2_${i}`)?.addEventListener("click", () =>
-      toggleText(`x2_${i}`, window[`h2_${i}`])
+    document.getElementById(`bh3_${i}`)?.addEventListener("click", () =>
+      toggleText(`x3_${i}`, window[`h3_${i}`])
     );
-    document.getElementById(`cl2_${i}`)?.addEventListener("click", () =>
-      toggleText(`x2_${i}`, window[`c2_${i}`])
+    document.getElementById(`bcl3_${i}`)?.addEventListener("click", () =>
+      toggleText(`x3_${i}`, window[`c3_${i}`])
     );
   }
 
