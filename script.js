@@ -18,6 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
       for (let i = 1; i <= 16; i++) {
         window[`g2_${i}`] = greek[`g2_${i}`] || "";
       }
+for (let i = 1; i <= 16; i++) {
+  window[`g3_${i}`] = greek[`g3_${i}`] || "";
+}
+
+
       greekLoaded = true;
     })
     .catch(error => {
@@ -37,6 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
       for (let i = 1; i <= 16; i++) {
         window[`l2_${i}`] = long[`l2_${i}`] || "";
       }
+      for (let i = 1; i <= 16; i++) {
+  window[`l3_${i}`] = long[`l3_${i}`] || "";
+}
+
       longLoaded = true;
     })
     .catch(error => {
@@ -56,6 +65,10 @@ document.addEventListener('DOMContentLoaded', () => {
       for (let i = 1; i <= 16; i++) {
         window[`h2_${i}`] = hilaire[`h2_${i}`] || "";
       }
+      for (let i = 1; i <= 16; i++) {
+  window[`h3_${i}`] = hilaire[`h3_${i}`] || "";
+}
+
       hilaireLoaded = true;
     })
     .catch(error => {
@@ -76,11 +89,21 @@ document.addEventListener('DOMContentLoaded', () => {
       for (let i = 1; i <= 16; i++) {
         window[`c2_${i}`] = casaubon[`c2_${i}`] || "";
       }
+      for (let i = 1; i <= 16; i++) {
+  window[`c3_${i}`] = casaubon[`c3_${i}`] || "";
+}
+
       casaubonLoaded = true;
     })
     .catch(error => {
       console.error('Could not load casaubon.json:', error);
     });
+
+
+
+
+
+
 
 
 
@@ -97,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById(`bh1_${i}`)?.addEventListener("click", () =>
       toggleText(`x1_${i}`, window[`h1_${i}`])
     );
-    document.getElementById(`bcl1_${i}`)?.addEventListener("click", () =>
+    document.getElementById(`bc1_${i}`)?.addEventListener("click", () =>
       toggleText(`x1_${i}`, window[`c1_${i}`])
     );
   }
@@ -113,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById(`bh2_${i}`)?.addEventListener("click", () =>
       toggleText(`x2_${i}`, window[`h2_${i}`])
     );
-    document.getElementById(`cc2_${i}`)?.addEventListener("click", () =>
+    document.getElementById(`bc2_${i}`)?.addEventListener("click", () =>
       toggleText(`x2_${i}`, window[`c2_${i}`])
     );
   }

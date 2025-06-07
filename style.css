@@ -108,7 +108,7 @@ a:visited {
 }
 
 .bu_lang{
-  background-color: #686f74; /* Blue by default */
+  background-color: #5b92b9; 
   padding: 10px 20px;
   border: none;
   cursor: pointer;
@@ -117,5 +117,5 @@ a:visited {
 }
 
 .bu_lang.active {
-  background-color: #0000007a; /* Red when active */
+  background-color: #bc3e3e; /* Red when active */
 }
