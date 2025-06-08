@@ -3,7 +3,6 @@ let longLoaded = false;
 let hilaireLoaded = false;
 let casaubonLoaded = false;
 
-
 document.addEventListener('DOMContentLoaded', () => {
   // Greek JSON laden
   fetch('greek.json')
@@ -17,12 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       for (let i = 1; i <= 16; i++) {
         window[`g2_${i}`] = greek[`g2_${i}`] || "";
+        window[`g3_${i}`] = greek[`g3_${i}`] || "";
       }
-for (let i = 1; i <= 16; i++) {
-  window[`g3_${i}`] = greek[`g3_${i}`] || "";
-}
-
-
       greekLoaded = true;
     })
     .catch(error => {
@@ -41,18 +36,15 @@ for (let i = 1; i <= 16; i++) {
       }
       for (let i = 1; i <= 16; i++) {
         window[`l2_${i}`] = long[`l2_${i}`] || "";
+        window[`l3_${i}`] = long[`l3_${i}`] || "";
       }
-      for (let i = 1; i <= 16; i++) {
-  window[`l3_${i}`] = long[`l3_${i}`] || "";
-}
-
       longLoaded = true;
     })
     .catch(error => {
       console.error('Could not load long.json:', error);
     });
 
-  // hilaire JSON laden
+  // Hilaire JSON laden
   fetch('hilaire.json')
     .then(response => {
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
@@ -64,19 +56,15 @@ for (let i = 1; i <= 16; i++) {
       }
       for (let i = 1; i <= 16; i++) {
         window[`h2_${i}`] = hilaire[`h2_${i}`] || "";
+        window[`h3_${i}`] = hilaire[`h3_${i}`] || "";
       }
-      for (let i = 1; i <= 16; i++) {
-  window[`h3_${i}`] = hilaire[`h3_${i}`] || "";
-}
-
       hilaireLoaded = true;
     })
     .catch(error => {
       console.error('Could not load hilaire.json:', error);
     });
 
-
-  // casaubon JSON laden    
+  // Casaubon JSON laden
   fetch('casaubon.json')
     .then(response => {
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
@@ -88,90 +76,77 @@ for (let i = 1; i <= 16; i++) {
       }
       for (let i = 1; i <= 16; i++) {
         window[`c2_${i}`] = casaubon[`c2_${i}`] || "";
+        window[`c3_${i}`] = casaubon[`c3_${i}`] || "";
       }
-      for (let i = 1; i <= 16; i++) {
-  window[`c3_${i}`] = casaubon[`c3_${i}`] || "";
-}
-
       casaubonLoaded = true;
     })
     .catch(error => {
       console.error('Could not load casaubon.json:', error);
     });
 
-
-
-
-
-
-
-
-
-
-
-  // Event-Listener für Buch1
+  // Event-Listener für Buch 1
   for (let i = 1; i <= 17; i++) {
     document.getElementById(`bg1_${i}`)?.addEventListener("click", () =>
-      toggleText(`x1_${i}`, window[`g1_${i}`])
+      toggleText(`x1_${i}`, window[`g1_${i}`], "darkred")
     );
     document.getElementById(`bl1_${i}`)?.addEventListener("click", () =>
-      toggleText(`x1_${i}`, window[`l1_${i}`])
+      toggleText(`x1_${i}`, window[`l1_${i}`], "darkblue")
     );
     document.getElementById(`bh1_${i}`)?.addEventListener("click", () =>
-      toggleText(`x1_${i}`, window[`h1_${i}`])
+      toggleText(`x1_${i}`, window[`h1_${i}`], "green")
     );
     document.getElementById(`bc1_${i}`)?.addEventListener("click", () =>
-      toggleText(`x1_${i}`, window[`c1_${i}`])
+      toggleText(`x1_${i}`, window[`c1_${i}`], "orange")
     );
   }
 
   // Event-Listener für Buch 2
   for (let i = 1; i <= 17; i++) {
     document.getElementById(`bg2_${i}`)?.addEventListener("click", () =>
-      toggleText(`x2_${i}`, window[`g2_${i}`])
+      toggleText(`x2_${i}`, window[`g2_${i}`], "darkred")
     );
     document.getElementById(`bl2_${i}`)?.addEventListener("click", () =>
-      toggleText(`x2_${i}`, window[`l2_${i}`])
+      toggleText(`x2_${i}`, window[`l2_${i}`], "darkblue")
     );
     document.getElementById(`bh2_${i}`)?.addEventListener("click", () =>
-      toggleText(`x2_${i}`, window[`h2_${i}`])
+      toggleText(`x2_${i}`, window[`h2_${i}`], "green")
     );
     document.getElementById(`bc2_${i}`)?.addEventListener("click", () =>
-      toggleText(`x2_${i}`, window[`c2_${i}`])
+      toggleText(`x2_${i}`, window[`c2_${i}`], "orange")
     );
   }
 
-
-
-    // Event-Listener für Buch 3
+  // Event-Listener für Buch 3
   for (let i = 1; i <= 16; i++) {
     document.getElementById(`bg3_${i}`)?.addEventListener("click", () =>
-      toggleText(`x3_${i}`, window[`g3_${i}`])
+      toggleText(`x3_${i}`, window[`g3_${i}`], "darkred")
     );
     document.getElementById(`bl3_${i}`)?.addEventListener("click", () =>
-      toggleText(`x3_${i}`, window[`l3_${i}`])
+      toggleText(`x3_${i}`, window[`l3_${i}`], "darkblue")
     );
     document.getElementById(`bh3_${i}`)?.addEventListener("click", () =>
-      toggleText(`x3_${i}`, window[`h3_${i}`])
+      toggleText(`x3_${i}`, window[`h3_${i}`], "green")
     );
-    document.getElementById(`bcl3_${i}`)?.addEventListener("click", () =>
-      toggleText(`x3_${i}`, window[`c3_${i}`])
+    document.getElementById(`bc3_${i}`)?.addEventListener("click", () =>
+      toggleText(`x3_${i}`, window[`c3_${i}`], "orange")
     );
   }
 
-
-
-
-
-
-
-
+  // Beim Laden der Seite zur gespeicherten Position scrollen
+  const scrollPos = localStorage.getItem("scrollPosition");
+  if (scrollPos !== null) {
+    window.scrollTo(0, parseInt(scrollPos, 10));
+  }
 });
 
-// Text ein-/ausblenden
-function toggleText(id, content) {
+// Text ein-/ausblenden mit Farbe
+function toggleText(id, content, color) {
   const e = document.getElementById(id);
-  e.innerHTML = e.innerHTML.trim() !== "" ? "" : content;
+  if (e.innerHTML.trim() !== "") {
+    e.innerHTML = "";
+  } else {
+    e.innerHTML = `<span style="color: ${color}">${content}</span>`;
+  }
 }
 
 // Deutsch ein-/ausblenden
@@ -201,21 +176,4 @@ function buchAnAus(id) {
 // Scrollposition beim Verlassen der Seite speichern
 window.addEventListener("beforeunload", () => {
   localStorage.setItem("scrollPosition", window.scrollY);
-});
-
-// Beim Laden der Seite zur gespeicherten Position scrollen
-document.addEventListener("DOMContentLoaded", () => {
-  const scrollPos = localStorage.getItem("scrollPosition");
-  if (scrollPos !== null) {
-    window.scrollTo(0, parseInt(scrollPos, 10));
-  }
-});
-
-
-const buttons = document.querySelectorAll('.bu_lang');
-
-buttons.forEach((btn) => {
-  btn.addEventListener('click', () => {
-    btn.classList.toggle('active');
-  });
 });
