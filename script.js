@@ -3,6 +3,14 @@ let longLoaded = false;
 let hilaireLoaded = false;
 let casaubonLoaded = false;
 
+// Farbdefinitionen für aktive Buttons (einfach hier anpassen)
+const activeColors = {
+  greek: { color: "darkred" },
+  long: {  color: "darkblue" },
+  hilaire: { color: "green" },
+  casaubon: { color: "orange" }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   // Greek JSON laden
   fetch('greek.json')
@@ -86,66 +94,76 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Event-Listener für Buch 1
   for (let i = 1; i <= 17; i++) {
-    document.getElementById(`bg1_${i}`)?.addEventListener("click", () =>
-      toggleText(`x1_${i}`, window[`g1_${i}`], "darkred")
+    document.getElementById(`bg1_${i}`)?.addEventListener("click", (e) =>
+      toggleText(`x1_${i}`, window[`g1_${i}`], "greek", e.currentTarget)
     );
-    document.getElementById(`bl1_${i}`)?.addEventListener("click", () =>
-      toggleText(`x1_${i}`, window[`l1_${i}`], "darkblue")
+    document.getElementById(`bl1_${i}`)?.addEventListener("click", (e) =>
+      toggleText(`x1_${i}`, window[`l1_${i}`], "long", e.currentTarget)
     );
-    document.getElementById(`bh1_${i}`)?.addEventListener("click", () =>
-      toggleText(`x1_${i}`, window[`h1_${i}`], "green")
+    document.getElementById(`bh1_${i}`)?.addEventListener("click", (e) =>
+      toggleText(`x1_${i}`, window[`h1_${i}`], "hilaire", e.currentTarget)
     );
-    document.getElementById(`bc1_${i}`)?.addEventListener("click", () =>
-      toggleText(`x1_${i}`, window[`c1_${i}`], "orange")
+    document.getElementById(`bc1_${i}`)?.addEventListener("click", (e) =>
+      toggleText(`x1_${i}`, window[`c1_${i}`], "casaubon", e.currentTarget)
     );
   }
 
   // Event-Listener für Buch 2
   for (let i = 1; i <= 17; i++) {
-    document.getElementById(`bg2_${i}`)?.addEventListener("click", () =>
-      toggleText(`x2_${i}`, window[`g2_${i}`], "darkred")
+    document.getElementById(`bg2_${i}`)?.addEventListener("click", (e) =>
+      toggleText(`x2_${i}`, window[`g2_${i}`], "greek", e.currentTarget)
     );
-    document.getElementById(`bl2_${i}`)?.addEventListener("click", () =>
-      toggleText(`x2_${i}`, window[`l2_${i}`], "darkblue")
+    document.getElementById(`bl2_${i}`)?.addEventListener("click", (e) =>
+      toggleText(`x2_${i}`, window[`l2_${i}`], "long", e.currentTarget)
     );
-    document.getElementById(`bh2_${i}`)?.addEventListener("click", () =>
-      toggleText(`x2_${i}`, window[`h2_${i}`], "green")
+    document.getElementById(`bh2_${i}`)?.addEventListener("click", (e) =>
+      toggleText(`x2_${i}`, window[`h2_${i}`], "hilaire", e.currentTarget)
     );
-    document.getElementById(`bc2_${i}`)?.addEventListener("click", () =>
-      toggleText(`x2_${i}`, window[`c2_${i}`], "orange")
+    document.getElementById(`bc2_${i}`)?.addEventListener("click", (e) =>
+      toggleText(`x2_${i}`, window[`c2_${i}`], "casaubon", e.currentTarget)
     );
   }
 
   // Event-Listener für Buch 3
   for (let i = 1; i <= 16; i++) {
-    document.getElementById(`bg3_${i}`)?.addEventListener("click", () =>
-      toggleText(`x3_${i}`, window[`g3_${i}`], "darkred")
+    document.getElementById(`bg3_${i}`)?.addEventListener("click", (e) =>
+      toggleText(`x3_${i}`, window[`g3_${i}`], "greek", e.currentTarget)
     );
-    document.getElementById(`bl3_${i}`)?.addEventListener("click", () =>
-      toggleText(`x3_${i}`, window[`l3_${i}`], "darkblue")
+    document.getElementById(`bl3_${i}`)?.addEventListener("click", (e) =>
+      toggleText(`x3_${i}`, window[`l3_${i}`], "long", e.currentTarget)
     );
-    document.getElementById(`bh3_${i}`)?.addEventListener("click", () =>
-      toggleText(`x3_${i}`, window[`h3_${i}`], "green")
+    document.getElementById(`bh3_${i}`)?.addEventListener("click", (e) =>
+      toggleText(`x3_${i}`, window[`h3_${i}`], "hilaire", e.currentTarget)
     );
-    document.getElementById(`bc3_${i}`)?.addEventListener("click", () =>
-      toggleText(`x3_${i}`, window[`c3_${i}`], "orange")
+    document.getElementById(`bc3_${i}`)?.addEventListener("click", (e) =>
+      toggleText(`x3_${i}`, window[`c3_${i}`], "casaubon", e.currentTarget)
     );
-  }
-
-  // Beim Laden der Seite zur gespeicherten Position scrollen
-  const scrollPos = localStorage.getItem("scrollPosition");
-  if (scrollPos !== null) {
-    window.scrollTo(0, parseInt(scrollPos, 10));
   }
 });
 
-// Text ein-/ausblenden mit Farbe
-function toggleText(id, content, color) {
+// Text ein-/ausblenden mit Farbänderung am Button
+function toggleText(id, content, className, button) {
   const e = document.getElementById(id);
-  if (e.innerHTML.trim() !== "") {
+  if (!e) return;
+
+  // Prüfen, ob der Button aktuell aktiv ist
+  const isActive = button.dataset.active === "true";
+
+  if (isActive) {
+    // Text ausblenden
     e.innerHTML = "";
+    button.dataset.active = "false";
+    // Button Style zurücksetzen
+    button.style.backgroundColor = "";
+    button.style.color = "";
   } else {
-    e.innerHTML = `<span style="color: ${color}">${content}</span>`;
+    // Text einblenden
+    e.innerHTML = `<span class="${className}">${content}</span>`;
+    button.dataset.active = "true";
+    // Button einfärben
+    const colors = activeColors[className];
+    button.style.backgroundColor = colors.background;
+    button.style.color = colors.color;
   }
 }
 
@@ -176,4 +194,12 @@ function buchAnAus(id) {
 // Scrollposition beim Verlassen der Seite speichern
 window.addEventListener("beforeunload", () => {
   localStorage.setItem("scrollPosition", window.scrollY);
+});
+
+// Scrollposition beim Laden der Seite wiederherstellen
+window.addEventListener("load", () => {
+  const scrollPos = localStorage.getItem("scrollPosition");
+  if (scrollPos !== null) {
+    window.scrollTo(0, parseInt(scrollPos, 10));
+  }
 });

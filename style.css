@@ -87,15 +87,13 @@ button {
   margin: 2%;
 }
 
-a {
-  color: black;
-  text-decoration: none;
-}
 
-a:visited {
-  color: rgb(0, 0, 0);
-}
 
 [lang="grc"] {
   font-family: 'Palatino Linotype', 'Gentium Plus', serif;
 }
+
+.greek { color: darkred; }
+.long { color: darkblue; }
+.hilaire { color: green; }
+.casaubon { color: orange; }
