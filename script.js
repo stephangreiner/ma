@@ -7,8 +7,8 @@ let casaubonLoaded = false;
 const activeColors = {
   greek: { color: "darkred" },
   long: {  color: "darkblue" },
-  hilaire: { color: "green" },
-  casaubon: { color: "orange" }
+  hilaire: { color: "darkgreen" },
+  casaubon: { color: "darkorange" }
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -26,6 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
         window[`g2_${i}`] = greek[`g2_${i}`] || "";
         window[`g3_${i}`] = greek[`g3_${i}`] || "";
       }
+      for (let i = 1; i <= 51; i++) {
+        window[`g4_${i}`] = greek[`g4_${i}`] || "";
+      }
+
+
+
       greekLoaded = true;
     })
     .catch(error => {
@@ -46,6 +52,11 @@ document.addEventListener('DOMContentLoaded', () => {
         window[`l2_${i}`] = long[`l2_${i}`] || "";
         window[`l3_${i}`] = long[`l3_${i}`] || "";
       }
+      for (let i = 1; i <= 51; i++) {
+        window[`l4_${i}`] = long[`l4_${i}`] || "";
+      }
+
+
       longLoaded = true;
     })
     .catch(error => {
@@ -66,6 +77,10 @@ document.addEventListener('DOMContentLoaded', () => {
         window[`h2_${i}`] = hilaire[`h2_${i}`] || "";
         window[`h3_${i}`] = hilaire[`h3_${i}`] || "";
       }
+         for (let i = 1; i <= 51; i++) {
+        window[`h4_${i}`] = long[`h4_${i}`] || "";
+      }
+
       hilaireLoaded = true;
     })
     .catch(error => {
@@ -86,6 +101,10 @@ document.addEventListener('DOMContentLoaded', () => {
         window[`c2_${i}`] = casaubon[`c2_${i}`] || "";
         window[`c3_${i}`] = casaubon[`c3_${i}`] || "";
       }
+               for (let i = 1; i <= 51; i++) {
+        window[`c4_${i}`] = long[`c4_${i}`] || "";
+      }
+
       casaubonLoaded = true;
     })
     .catch(error => {
@@ -139,6 +158,25 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleText(`x3_${i}`, window[`c3_${i}`], "casaubon", e.currentTarget)
     );
   }
+
+  // Event-Listener für Buch 4
+  for (let i = 1; i <= 51; i++) {
+    document.getElementById(`bg4_${i}`)?.addEventListener("click", (e) =>
+      toggleText(`x4_${i}`, window[`g4_${i}`], "greek", e.currentTarget)
+    );
+    document.getElementById(`bl4_${i}`)?.addEventListener("click", (e) =>
+      toggleText(`x4_${i}`, window[`l4_${i}`], "long", e.currentTarget)
+    );
+    document.getElementById(`bh5_${i}`)?.addEventListener("click", (e) =>
+      toggleText(`x4_${i}`, window[`h4_${i}`], "hilaire", e.currentTarget)
+    );
+    document.getElementById(`bc4_${i}`)?.addEventListener("click", (e) =>
+      toggleText(`x4_${i}`, window[`c4_${i}`], "casaubon", e.currentTarget)
+    );
+  }
+
+
+
 });
 
 // Text ein-/ausblenden mit Farbänderung am Button
@@ -181,7 +219,7 @@ function lang_an_aus() {
 function toggleClassDisplay(className) {
   const elements = document.querySelectorAll(`.${className}`);
   elements.forEach(el => {
-    el.style.display = (el.style.display === "none") ? "block" : "none";
+    el.style.display = (el.style.display === "none") ? "inline-block" : "none";
   });
 }
 

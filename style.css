@@ -9,9 +9,6 @@ body {
   padding: 0;
 }
 
-h5 {
-  text-align: center;
-}
 
 p {
   margin: 1em 0;
@@ -19,8 +16,7 @@ p {
 }
 
 .bu_lang {
-  display: none;
-   display: inline-block; /* Makes buttons flow like text but allows setting width/height */
+   display: none;
     margin-right: 5px;   
 }
 
@@ -97,3 +93,4 @@ button {
 .long { color: darkblue; }
 .hilaire { color: green; }
 .casaubon { color: orange; }
+
