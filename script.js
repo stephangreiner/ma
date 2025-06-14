@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById(`bl4_${i}`)?.addEventListener("click", (e) =>
       toggleText(`x4_${i}`, window[`l4_${i}`], "long", e.currentTarget)
     );
-    document.getElementById(`bh5_${i}`)?.addEventListener("click", (e) =>
+    document.getElementById(`bh4_${i}`)?.addEventListener("click", (e) =>
       toggleText(`x4_${i}`, window[`h4_${i}`], "hilaire", e.currentTarget)
     );
     document.getElementById(`bc4_${i}`)?.addEventListener("click", (e) =>
