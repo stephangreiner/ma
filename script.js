@@ -5,12 +5,11 @@ let casaubonLoaded = false;
 
 // Farbdefinitionen für aktive Buttons (einfach hier anpassen)
 const activeColors = {
-  greek: { color: "darkred" },
-  long: {  color: "darkblue" },
-  hilaire: { color: "darkgreen" },
-  casaubon: { color: "darkorange" }
-};
-
+  greek: { background: "#f8d7da", color: "darkred" },
+  long: { background: "#d1ecf1", color: "darkblue" },
+  hilaire: { background: "#d4edda", color: "darkgreen" },
+  casaubon: { background: "#fff3cd", color: "darkorange" }
+}
 document.addEventListener('DOMContentLoaded', () => {
   // Greek JSON laden
   fetch('greek.json')
@@ -78,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window[`h3_${i}`] = hilaire[`h3_${i}`] || "";
       }
          for (let i = 1; i <= 51; i++) {
-        window[`h4_${i}`] = long[`h4_${i}`] || "";
+        window[`h4_${i}`] = hilaire[`h4_${i}`] || "";
       }
 
       hilaireLoaded = true;
@@ -102,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window[`c3_${i}`] = casaubon[`c3_${i}`] || "";
       }
                for (let i = 1; i <= 51; i++) {
-        window[`c4_${i}`] = long[`c4_${i}`] || "";
+        window[`c4_${i}`] = casaubon[`c4_${i}`] || "";
       }
 
       casaubonLoaded = true;
