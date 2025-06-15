@@ -28,9 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
       for (let i = 1; i <= 51; i++) {
         window[`g4_${i}`] = greek[`g4_${i}`] || "";
       }
-
-
-
+      for (let i = 1; i <= 37; i++) {
+        window[`g5_${i}`] = greek[`g5_${i}`] || "";
+      }
       greekLoaded = true;
     })
     .catch(error => {
@@ -54,6 +54,10 @@ document.addEventListener('DOMContentLoaded', () => {
       for (let i = 1; i <= 51; i++) {
         window[`l4_${i}`] = long[`l4_${i}`] || "";
       }
+            for (let i = 1; i <= 37; i++) {
+        window[`l5_${i}`] = greek[`l5_${i}`] || "";
+      }
+
 
 
       longLoaded = true;
@@ -79,6 +83,10 @@ document.addEventListener('DOMContentLoaded', () => {
          for (let i = 1; i <= 51; i++) {
         window[`h4_${i}`] = hilaire[`h4_${i}`] || "";
       }
+                  for (let i = 1; i <= 37; i++) {
+        window[`h5_${i}`] = greek[`h5_${i}`] || "";
+      }
+
 
       hilaireLoaded = true;
     })
@@ -103,6 +111,10 @@ document.addEventListener('DOMContentLoaded', () => {
                for (let i = 1; i <= 51; i++) {
         window[`c4_${i}`] = casaubon[`c4_${i}`] || "";
       }
+                  for (let i = 1; i <= 37; i++) {
+        window[`c5_${i}`] = greek[`c5_${i}`] || "";
+      }
+
 
       casaubonLoaded = true;
     })
@@ -173,7 +185,21 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleText(`x4_${i}`, window[`c4_${i}`], "casaubon", e.currentTarget)
     );
   }
-
+  // Event-Listener für Buch 5
+  for (let i = 1; i <= 37; i++) {
+    document.getElementById(`bg5_${i}`)?.addEventListener("click", (e) =>
+      toggleText(`x5_${i}`, window[`g5_${i}`], "greek", e.currentTarget)
+    );
+    document.getElementById(`bl5_${i}`)?.addEventListener("click", (e) =>
+      toggleText(`x5_${i}`, window[`l5_${i}`], "long", e.currentTarget)
+    );
+    document.getElementById(`bh5_${i}`)?.addEventListener("click", (e) =>
+      toggleText(`x5_${i}`, window[`h5_${i}`], "hilaire", e.currentTarget)
+    );
+    document.getElementById(`bc5_${i}`)?.addEventListener("click", (e) =>
+      toggleText(`x5_${i}`, window[`c5_${i}`], "casaubon", e.currentTarget)
+    );
+  }
 
 
 });
