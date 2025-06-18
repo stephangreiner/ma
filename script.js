@@ -209,7 +209,9 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleText(`x5_${i}`, window[`c5_${i}`], "casaubon", e.currentTarget)
     );
   }
-  for (let i = 1; i <= 37; i++) {
+
+    // Event-Listener für Buch 5
+  for (let i = 1; i <= 59; i++) {
     document.getElementById(`bg6_${i}`)?.addEventListener("click", (e) =>
       toggleText(`x6_${i}`, window[`g6_${i}`], "greek", e.currentTarget)
     );
